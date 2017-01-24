@@ -1,8 +1,8 @@
-package com.odsinada;
+package com.odsinada.lambdaexp1;
 
 import java.util.Arrays;
 
-public class Lambda1 {
+public class Exercise1 {
 
     public static void main(String args[]) {
         String[] myArr = new String[]{"hello", "jakeodsi", "abby", "kuya lucas", "kenzo", "nathan"};
