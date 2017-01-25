@@ -11,6 +11,8 @@ public class Exercise3 {
         System.out.println(betterElement(new Car(5), new Car(10), (c1, c2) -> c1.getPrice() > c2.getPrice()));
         System.out.println(betterElement(new Employee(14), new Employee(9), (c1, c2) -> c1.getSalary() > c2.getSalary()));
 
+        System.out.println("DONE!");
+
     }
 
     public static <T> T betterElement(T first, T second, TwoElementPredicate<T> tsp) {
