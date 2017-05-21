@@ -1,8 +1,8 @@
-package com.odsinada.lambdaexp1;
+package com.odsinada.lambdaexp2;
 
 import java.util.Arrays;
 
-public class Exercise1 {
+public class Exercise2 {
 
     public static void main(String args[]) {
         String[] myArr = new String[]{"hello", "jakeodsi", "abby", "kuya lucas", "kenzo", "nathan"};
@@ -38,7 +38,7 @@ public class Exercise1 {
         System.out.println(Arrays.asList(myArr));
 
         // words with 'e' first, all else second
-        Arrays.sort(myArr, (s1, s2) -> LambdaUtil.charComparison(s1, s2));
+        Arrays.sort(myArr, LambdaUtil::charComparison);
 
         System.out.println(Arrays.asList(myArr));
 
