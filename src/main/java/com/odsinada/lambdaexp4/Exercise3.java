@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-public class Exercise2 {
+public class Exercise3 {
 
     public static void main(String[] args) {
         List<String> words = new ArrayList<>();
@@ -16,31 +16,28 @@ public class Exercise2 {
         words.add("jerome");
         words.add("celeste");
 
-        String result = firstAllMatch(words.stream(),
-                word -> word.contains("o"),
-                word -> word.length() > 5);
+        String result = firstAnyMatch(words.stream(),
+                word -> word.contains("f"),
+                word -> word.length() > 6);
 
         System.out.println(result);
     }
 
-    public static <T> T firstAllMatch(Stream<T> stream, Predicate<T>... pred) {
-        Predicate<T> allPred = allPassPredicate(pred);
+    public static <T> T firstAnyMatch(Stream<T> stream, Predicate<T>... pred) {
+        Predicate<T> allPred = anyPassPredicate(pred);
         return stream.filter(allPred).findFirst().orElse(null);
     }
 
-    public static <T> Predicate<T> allPassPredicate(Predicate<T>... pred) {
+    public static <T> Predicate<T> anyPassPredicate(Predicate<T>... pred) {
         Predicate allPred = null;
         for (Predicate curr : pred) {
-//            cuteSiJake(true) AND masCuteSiAbby(true)
             if (allPred == null) {
                 allPred = curr;
-                //WifeyTheBest  WifeyAlwaysRight
                 continue;
             }
-            allPred = allPred.and(curr);
+            allPred = allPred.or(curr);
 
         }
         return allPred;
     }
-
 }

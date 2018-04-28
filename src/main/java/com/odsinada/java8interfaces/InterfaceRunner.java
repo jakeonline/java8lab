@@ -14,12 +14,12 @@ public class InterfaceRunner {
         List<RegularPolygon> shapesList = Arrays.<RegularPolygon>asList(sq1, sq2, et1, et2);
         RegularPolygon[] shapes = shapesList.toArray(new RegularPolygon[shapesList.size()]);
 
-        System.out.println(RegularPolygon.totalSides(shapes));
+        System.out.println("Total sides: " +RegularPolygon.totalSides(shapes));
 
-        System.out.println(sq1.getPerimiter());
-        System.out.println(et2.getPerimiter());
+        System.out.println("sq1 perimeter: " + sq1.getPerimiter());
+        System.out.println("et2 perimeter: " + et2.getPerimiter());
 
-        System.out.println(et2.getInteriorAngle());
+        System.out.println("et2 interior angle: " + et2.getInteriorAngle());
     }
 
 }
