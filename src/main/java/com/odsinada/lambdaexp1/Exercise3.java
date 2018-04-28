@@ -7,9 +7,11 @@ public class Exercise3 {
         System.out.println(betterElement("fantastic", "beast", (s1, s2) -> s1.length() > s2.length()));
         System.out.println(betterElement("amazon", "webservices", (s1, s2) -> s1.length() > s2.length()));
         System.out.println(betterElement("hello", "world", (s1, s2) -> true));
+        System.out.println(betterElement("hello", "world", (s1, s2) -> false));
 
-        System.out.println(betterElement(new Car(5), new Car(10), (c1, c2) -> c1.getPrice() > c2.getPrice()));
-        System.out.println(betterElement(new Employee(14), new Employee(9), (c1, c2) -> c1.getSalary() > c2.getSalary()));
+        System.out.println("Pricier car is " + betterElement(new Car("Lightning", 5, 200), new Car("Mater", 10, 100), (c1, c2) -> c1.getPrice() > c2.getPrice()));
+        System.out.println("Heavier car is " + betterElement(new Car("Lightning", 5, 200), new Car("Mater", 10, 100), (c1, c2) -> c1.getWeight() > c2.getWeight()));
+        System.out.println("Richer employee is " + betterElement(new Employee(14), new Employee(9), (c1, c2) -> c1.getSalary() > c2.getSalary()));
 
         System.out.println("DONE!");
 
@@ -24,14 +26,14 @@ public class Exercise3 {
     }
 
     static class Car {
+        private String name;
+        private int weight;
         private int price;
 
-        public Car() {
-
-        }
-
-        public Car(int initPrice) {
-            price = initPrice;
+        public Car(String name, int i, int initPrice) {
+            this.weight = weight;
+            this.price = initPrice;
+            this.name = name;
         }
 
         public int getPrice() {
@@ -44,7 +46,23 @@ public class Exercise3 {
 
         @Override
         public String toString() {
-            return "Car with price: " + price;
+            return "Car with name: " + name;
+        }
+
+        public int getWeight() {
+            return weight;
+        }
+
+        public void setWeight(int weight) {
+            this.weight = weight;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
         }
     }
 

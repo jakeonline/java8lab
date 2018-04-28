@@ -1,6 +1,7 @@
 package com.odsinada.lambdaexp2;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
@@ -12,6 +13,8 @@ public class Exercise3 {
 
         int x = 2, y = 3;
         method1(x, y, d -> Math.cos(d));
+        method1(x, y, Math::cos);
+
         method1B(x, y, d -> {
             Math.cos(d);
             return;
@@ -20,7 +23,7 @@ public class Exercise3 {
         methodX("jake", "odsinada", (s1, s2) -> s2 + ", " + s1);
 
 
-        List<String> someList = new ArrayList<String>();
+        List<String> someList = Arrays.asList("abigail", "kenzo", "jacob");
         someList.forEach(entry -> System.out.println(entry));
         someList.forEach(System.out::println);
 
@@ -31,7 +34,7 @@ public class Exercise3 {
         method2(a, b, c, (d1, d2) -> Math.pow(d1, d2));
         method2(a, b, c, Math::pow);
 
-        List<Integer> someStream = null;
+        List<Integer> someStream = Arrays.asList(1, 2, 3, 4, 5);
         someStream.stream().reduce(0, (i1, i2) -> Integer.sum(i1, i2));
         someStream.stream().reduce(0, Integer::sum);
 

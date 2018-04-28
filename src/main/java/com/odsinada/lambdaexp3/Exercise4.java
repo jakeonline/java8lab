@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by Jacob Odsinada on 17/05/2017.
  */
-public class Exercise3 {
+public class Exercise4 {
 
     public static void main(String[] args) {
         List<String> words = new ArrayList<>();
@@ -18,9 +18,11 @@ public class Exercise3 {
         words.add("kulafu");
         words.add("fly");
 
-        System.out.println(StringUtils.transformedList(words, (s) -> s.concat("!")));
-        System.out.println(StringUtils.transformedList(words, (s) -> s.replace("i", "eye")));
-        System.out.println(StringUtils.transformedList(words, String::toUpperCase));
+        System.out.println(ElementUtils.transformedList(words, (s) -> s.concat("!")));
+        System.out.println(ElementUtils.transformedList(words, (s) -> s.replace("i", "eye")));
+        System.out.println(ElementUtils.transformedList(words, String::toUpperCase));
 
+        List<Integer> wordLengths = ElementUtils.transformedList(words, String::length);
+        System.out.println(wordLengths);
     }
 }

@@ -17,12 +17,10 @@ public class Exercise1 {
         words.add("kulafu");
         words.add("fly");
 
-        System.out.println(ElementUtils.allMatches(words, s -> s.length() < 4));
-        System.out.println(ElementUtils.allMatches(words, s -> s.contains("b")));
-        System.out.println(ElementUtils.allMatches(words, s -> (s.length() % 2) == 0));
+        System.out.println(StringUtils.allMatches(words, s -> s.length() < 4));
+        System.out.println(StringUtils.allMatches(words, s -> s.contains("b")));
+        System.out.println(StringUtils.allMatches(words, s -> (s.length() % 2) == 0));
 
-        List<Integer> nums = Arrays.asList(1, 10, 100, 1000, 10000);
-        System.out.println(ElementUtils.allMatches(nums, n -> n > 500));
     }
 
 }
