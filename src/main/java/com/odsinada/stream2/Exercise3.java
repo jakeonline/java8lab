@@ -17,7 +17,7 @@ public class Exercise3 {
 
         System.out.println(words.stream().reduce((s1, s2) -> String.join(",", s1, s2)).get());
 
-        // extra
+        // additional play
         int[] numbers = new int[3];
         numbers[0] = 1111;
         numbers[1] = 2222;
