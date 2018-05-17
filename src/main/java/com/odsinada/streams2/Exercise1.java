@@ -1,4 +1,4 @@
-package com.odsinada.stream2;
+package com.odsinada.streams2;
 
 import java.util.Arrays;
 import java.util.List;
